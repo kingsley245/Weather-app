@@ -19,6 +19,43 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <link rel="icon" href="./svg/favicon-32x32.png" />
   </head>
-  <body></body>
+  <body>
+    <nav class="navbar container">
+      <div class="navbar__left">
+        <div class="navbar__logo">
+          <img src="./svg/weather logo.svg" alt="my weather logo" />
+        </div>
+      </div>
+
+      <div class="navbar__middle">
+        <div class="navbar__search_input">
+          <input
+            type="text"
+            placeholder="Search city or Zip code"
+            aria-label="weather app input search"
+          />
+          <i class="fa fa-search"></i>
+        </div>
+      </div>
+
+      <div class="navbar__right">
+        <div class="navbar__globe_logo-bar">
+          <i class="fa-solid fa-globe"></i>
+          <div class="navbar__globe-Name">
+            <h1>US | F</h1>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+        </div>
+        <button class="btn">Sign Up</button>
+        <div class="navbar__menu">
+          <i class="fa-solid fa-bars fa-2x"></i>
+        </div>
+      </div>
+    </nav>
+  </body>
 </html>

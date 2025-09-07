@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+
+:root {
+  /* Weather theme */
+  --weather-sunny: #fbbf24;
+  --weather-rainy: #3b82f6;
+  --weather-cloudy: #9ca3af;
+  --weather-stormy: #1e293b;
+  --weather-snowy: #e5e7eb;
+
+  /* Navbar colors */
+  /* --nav-bg-light: linear-gradient(90deg, #7c8799, #8a9bb0); */
+  --nav-bg-dark: linear-gradient(90deg, #0f172a, #1e293b);
+
+  --nav-text-light: #ffffff;
+  --nav-text-dark: #f3f4f6;
+}
+
+.navbar {
+  position: sticky;
+  z-index: 9999;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: gainsboro;
+  top: 0;
+}
+
+.navbar__left,
+.navbar__middle,
+.navbar__right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo img {
+  width: 90px;
+  height: auto;
+  margin-left: 60px;
+}
+
+.navbar__search_input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  width: 250px;
+  background-color: #cacbcc;
+  border-radius: 8px;
+}
+
+.navbar__search_input input {
+  flex: 1;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.navbar__globe_logo-bar {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar__globe-Name {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 8px 14px;
+  font-size: 1rem;
+  background-color: #252422;
+  color: #e5e7eb;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-right: 90px;
+  margin-left: 10px;
+}
