@@ -42,7 +42,7 @@
 .navbar__logo img {
   width: 90px;
   height: auto;
-  margin-left: 60px;
+  margin-left: 40px;
 }
 
 .navbar__search_input {
@@ -50,7 +50,7 @@
   align-items: center;
   gap: 8px;
   padding: 6px 8px;
-  width: 250px;
+  width: 350px;
   background-color: #cacbcc;
   border-radius: 8px;
 }
@@ -60,7 +60,7 @@
   outline: none;
   border: none;
   background-color: transparent;
-  padding: 4px 8px;
+  padding: 8px 10px;
   border-radius: 8px;
 }
 
@@ -86,4 +86,96 @@
   cursor: pointer;
   margin-right: 90px;
   margin-left: 10px;
+}
+
+/* ========= Tablets (≤ 992px) ========= */
+@media (max-width: 992px) {
+  .navbar__search_input {
+    width: 250px; /* shrink search box */
+  }
+
+  .btn {
+    /* margin-right: 30p */
+    padding: 6px 12px;
+  }
+
+  .navbar__globe_logo-bar {
+    gap: 15px; /* tighten spacing */
+  }
+}
+
+/* ========= Small tablets (≤ 768px) ========= */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 6px 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .navbar__logo img {
+    width: 70px;
+    margin-left: 0;
+  }
+
+  .navbar__search_input {
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    margin: 0;
+  }
+
+  .navbar__right {
+    gap: 10px;
+  }
+
+  .navbar__middle {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .navbar__middle {
+    order: 2;
+    flex: 1 0 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .navbar__search_input {
+    width: 90%; /* responsive width */
+    max-width: 300px;
+  }
+}
+
+/* Phones and very small devices */
+@media (max-width: 480px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar__middle {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .navbar__middle {
+    order: 2;
+    flex: 1 0 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .navbar__search_input {
+    flex: 1 0 100%;
+    max-width: 300px;
+  }
 }
