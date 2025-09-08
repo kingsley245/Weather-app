@@ -185,8 +185,11 @@
   align-items: center;
   justify-content: space-between;
   width: 300px;
-
+  margin-left: 30px;
   border-right: 1px solid black;
+  font-weight: 600;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .btn {
@@ -283,4 +286,44 @@
   .have__account {
     font-size: 0.9rem;
   }
+}
+
+.list__items {
+  padding: 20px;
+  position: relative;
+  background-color: gainsboro;
+}
+
+.menu-list,
+.menu-list a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+  font-weight: 600;
+  display: inline-block;
+  position: relative;
+}
+
+.list_items-li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 8px;
+}
+
+/* Underline effect */
+.menu-list a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.menu-list a:hover::after {
+  width: 100%;
 }
