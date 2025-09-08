@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    .tooltip-text_content {
+      width: 200px;
+      padding: 20px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      /* border: 1px solid burlywood; */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .btn_primary {
+      padding: 10px 16px;
+      border-radius: 8px;
+      background-color: #252422;
+      color: #fff;
+      border: none;
+    }
+
+    .have__account a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <div class="btn tooltip">
+      Sign Up
+      <div class="tooltip-text">
+        <div class="tooltip-text_content">
+          <h1 style="font-size: 1.7rem">Sign Up</h1>
+          <p class="tooltip__paragraph">
+            Save your favorite locations and forecast preferences, and set up
+            your own weather dashboard.
+          </p>
+          <button class="btn_primary">Sign Up</button>
+          <div class="have__account">
+            <p class="haveAcoount">Have an account ? <a href="#">Sign in</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -86,25 +86,25 @@
   cursor: pointer;
   margin-right: 90px;
   margin-left: 10px;
+  position: relative;
 }
 
-/* ========= Tablets (≤ 992px) ========= */
+/*  Tablets (≤ 992px)  */
 @media (max-width: 992px) {
   .navbar__search_input {
-    width: 250px; /* shrink search box */
+    width: 250px;
   }
 
   .btn {
-    /* margin-right: 30p */
     padding: 6px 12px;
   }
 
   .navbar__globe_logo-bar {
-    gap: 15px; /* tighten spacing */
+    gap: 15px;
   }
 }
 
-/* ========= Small tablets (≤ 768px) ========= */
+/* Small tablets (≤ 768px) */
 @media (max-width: 768px) {
   .navbar {
     padding: 6px 10px;
@@ -147,7 +147,7 @@
   }
 
   .navbar__search_input {
-    width: 90%; /* responsive width */
+    width: 90%;
     max-width: 300px;
   }
 }
@@ -178,4 +178,93 @@
     flex: 1 0 100%;
     max-width: 300px;
   }
+}
+
+.locattion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+
+  border-right: 1px solid black;
+}
+
+.btn {
+  position: relative;
+  padding: 10px 16px;
+  font-size: 1rem;
+  background-color: #252422;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+/* Tooltip must be inside relative parent (.btn / .tooltip) */
+.btn {
+  position: relative; /* <--- IMPORTANT */
+  padding: 10px 16px;
+  font-size: 1rem;
+  background-color: #252422;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Tooltip box */
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 120%; /* shows below button */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  background: #ffffff;
+  color: #1e293b;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  padding: 16px;
+  z-index: 1000;
+}
+
+/* Tooltip arrow */
+.tooltip-text::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #ffffff transparent;
+}
+
+/* Show tooltip on hover */
+.btn:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Inner content */
+.tooltip-text_content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn_primary {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: #252422;
+  color: #fff;
+  border: none;
+}
+
+.have__account a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #2563eb;
 }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .btn {
+        position: relative;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        background: #2563eb; /* blue button */
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      /* Tooltip container */
+      .tooltip .tooltip-text {
+        visibility: hidden;
+        opacity: 0;
+        width: max-content;
+        max-width: 220px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 8px 12px;
+        border-radius: 6px;
+        position: absolute;
+        top: 120%; /* now shows BELOW the button */
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opacity 0.3s ease-in-out;
+        z-index: 999;
+      }
+
+      /* Tooltip arrow (pointing UP now) */
+      .tooltip .tooltip-text::after {
+        content: '';
+        position: absolute;
+        bottom: 100%; /* place arrow at top of tooltip */
+        left: 20%;
+        transform: translateX(-50%);
+        border-width: 6px;
+        border-style: solid;
+        border-color: transparent transparent #333 transparent;
+      }
+
+      /* Show tooltip on hover */
+      .tooltip:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+
+    <button class="btn tooltip">
+      Sign Up
+      <span class="tooltip-text">Create your account to get started</span>
+    </button>
+  </body>
+</html>
