@@ -199,9 +199,9 @@
   border-radius: 6px;
   cursor: pointer;
 }
-/* Tooltip must be inside relative parent (.btn / .tooltip) */
+
 .btn {
-  position: relative; /* <--- IMPORTANT */
+  position: relative;
   padding: 10px 16px;
   font-size: 1rem;
   background-color: #252422;
@@ -252,7 +252,7 @@
 .tooltip-text_content {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .btn_primary {
@@ -261,10 +261,26 @@
   background-color: #252422;
   color: #fff;
   border: none;
+  width: 100px;
+  cursor: pointer;
 }
 
 .have__account a {
   text-decoration: none;
   cursor: pointer;
-  color: #2563eb;
+  color: #070808;
+}
+@media (max-width: 768px) {
+  .tooltip-text {
+    left: -20%;
+  }
+  .btn_primary {
+    padding: 6px 10px;
+    width: 100px;
+    cursor: pointer;
+  }
+  .p,
+  .have__account {
+    font-size: 0.9rem;
+  }
 }
