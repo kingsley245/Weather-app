@@ -316,6 +316,11 @@
   padding: 2px 8px;
   flex-wrap: wrap;
 }
+.menu-list a.active {
+  color: #007bff; /* Active color */
+  font-weight: bold; /* Bold active link */
+  width: 100%; /* Optional, if you want the active link to be full width */
+}
 
 /* Underline effect */
 .menu-list a::after {
@@ -668,4 +673,12 @@
 
 .scroll-up-btn:hover {
   background-color: #282a2c;
+}
+.content-section {
+  display: none;
+}
+
+.nav-link.active {
+  color: #007bff;
+  font-weight: bold;
 }
