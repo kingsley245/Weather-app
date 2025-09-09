@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Radar Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style></style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+      // Initialize map
+      var map = L.map('map').setView([4.82, 7.01], 6);
+
+      // Add OpenStreetMap base
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+
+      // Add RainViewer weather radar
+      var radarLayer = L.tileLayer(
+        'https://tilecache.rainviewer.com/v2/radar/{z}/{x}/{y}/2/1_1.png',
+        {
+          attribution: 'RainViewer.com',
+          opacity: 0.6
+        }
+      ).addTo(map);
+
+      // Refresh radar every 5 minutes
+      setInterval(() => {
+        radarLayer.setUrl(
+          'https://tilecache.rainviewer.com/v2/radar/{z}/{x}/{y}/2/1_1.png?time=' +
+            new Date().getTime()
+        );
+      }, 300000);
+
+      // Show current user location
+      map.locate({ setView: true, maxZoom: 10 });
+
+      map.on('locationfound', function (e) {
+        L.marker(e.latlng).addTo(map).bindPopup('You are here').openPopup();
+      });
+
+      map.on('locationerror', function () {
+        alert('Location access denied.');
+      });
+    </script>
+  </body>
+</html>
