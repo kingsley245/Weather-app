@@ -1,41 +1,3 @@
-// Initialize map
-var map = L.map('map').setView([4.82, 7.01], 6); // Default to Port Harcourt
-
-// Add OpenStreetMap base layer
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap contributors'
-}).addTo(map);
-
-// Add RainViewer radar layer
-var radarLayer = L.tileLayer(
-  'https://tilecache.rainviewer.com/v2/radar/{z}/{x}/{y}/2/1_1.png',
-  {
-    attribution: 'RainViewer.com',
-    opacity: 0.6
-  }
-).addTo(map);
-
-// Refresh radar every 5 minutes
-setInterval(() => {
-  radarLayer.setUrl(
-    'https://tilecache.rainviewer.com/v2/radar/{z}/{x}/{y}/2/1_1.png?time=' +
-      new Date().getTime()
-  );
-}, 300000); // 300,000 ms = 5 minutes
-
-// Try to locate the user's current position
-map.locate({ setView: true, maxZoom: 10 });
-
-// When location is found
-map.on('locationfound', function (e) {
-  L.marker(e.latlng).addTo(map).bindPopup(' You are here').openPopup();
-});
-
-// If location access is denied
-map.on('locationerror', function () {
-  alert('⚠️ Location access denied.');
-});
-
 function toggleAnswer(card) {
   const answer = card.nextElementSibling;
   const allAnswers = document.querySelectorAll('.weather-card-togle_answer');
@@ -79,3 +41,71 @@ window.onscroll = function () {
     scrollBtn.style.right = '-60px';
   }
 };
+
+// loading html
+const links = [...document.querySelectorAll('.menu-list')];
+const scriptMap = {
+  today: 'today.js',
+  Hourly: 'Hourly.js'
+};
+function loadPageContent(pageKey) {
+  const file = `${pageKey}.html`;
+  localStorage.setItem('activePage', pageKey);
+
+  // update page content
+  links.forEach((link) => link.classList.remove('active'));
+  const targetlist = Array.from(links).find((li) => {
+    const a = li.querySelector('a');
+    return a && a.getAttribute('href') === `#${pageKey}`;
+  });
+
+  if (targetlist) targetlist.classList.add('active');
+
+  fetch(file)
+    .then((res) => {
+      if (res.status != '200') throw new Error(`HTTP ${res.status}`);
+      return res.text();
+    })
+    .then((html) => {
+      document.getElementById('main__Content-page-load').innerHTML = html;
+
+      // loading corresponding script
+      if (scriptMap[pageKey]) {
+        loadScript(scriptMap[pageKey]);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      document.getElementById(
+        'main__Content-page-load'
+      ).innerHTML = `<h1 style="color:red";}>Failed to loadPageContent$(file)</h1>`;
+    });
+}
+
+links.forEach((li) => {
+  li.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const a = li.querySelector('a');
+    if (!a) return;
+    const page = a.getAttribute('href').substring(1);
+    loadPageContent.hash = page;
+  });
+});
+
+window.addEventListener('hashchange', () => {
+  const page = location.hash.replace('#', '') || 'today';
+  loadPageContent(page);
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  const page = location.hash.replace('#', '') || 'today';
+  loadPageContent(page);
+});
+
+function loadScript(filepath) {
+  const script = document.createElement('script');
+  script.src = filepath;
+  script.defer = true;
+  document.body.appendChild(script);
+}

@@ -317,9 +317,9 @@
   flex-wrap: wrap;
 }
 .menu-list a.active {
-  color: #007bff; /* Active color */
-  font-weight: bold; /* Bold active link */
-  width: 100%; /* Optional, if you want the active link to be full width */
+  color: #007bff;
+  font-weight: bold;
+  width: 100%;
 }
 
 /* Underline effect */
