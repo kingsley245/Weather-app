@@ -1,0 +1,33 @@
+<div class="container__calender-play">
+  <div class="top">
+    <div class="controls">
+      <select id="monthSelect" aria-label="Monthly select icon"></select>
+      <select id="yearSelect" aria-label="Monthly select icon"></select>
+    </div>
+    <div class="controls">
+      <button class="btn" onclick="prevMonth()" aria-label="button click">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="btn" onclick="nextMonth()" aria-label="button click">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="calendar-wrap">
+    <table class="calendar">
+      <thead>
+        <tr>
+          <th>Sun</th>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+        </tr>
+      </thead>
+      <tbody id="calendarBody"></tbody>
+    </table>
+  </div>
+</div>
