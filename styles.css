@@ -838,7 +838,7 @@ select {
   border: 1px solid #ccc;
   font-size: 14px;
 }
-.btn {
+.btn_weather-calender {
   background: var(--card);
   border: 0;
   padding: 6px 10px;

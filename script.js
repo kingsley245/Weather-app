@@ -46,7 +46,8 @@ window.onscroll = function () {
 const links = [...document.querySelectorAll('.menu-list')];
 const scriptMap = {
   today: 'today.js',
-  Hourly: 'Hourly.js'
+  Hourly: 'Hourly.js',
+  Monthly: 'monthly.js'
 };
 function loadPageContent(pageKey) {
   const file = `${pageKey}.html`;
@@ -78,7 +79,7 @@ function loadPageContent(pageKey) {
       console.error(err);
       document.getElementById(
         'main__Content-page-load'
-      ).innerHTML = `<h1 style="color:red";}>Failed to loadPageContent$(file)</h1>`;
+      ).innerHTML = `<h1 style="color:red";}>Failed to loadPageContent$(file) please contact developer 07041679031(whatsapp)</h1>`;
     });
 }
 
