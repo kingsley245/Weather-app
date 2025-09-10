@@ -815,7 +815,7 @@ body {
 .container__calender-play {
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 20px auto 0;
 }
 
 /* Top bar */
