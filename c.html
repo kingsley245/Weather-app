@@ -1,52 +1,44 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Radar Map</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <style></style>
-  </head>
-  <body>
-    <div id="map"></div>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<div class="weather-card-togle_answer">
+  <!-- Day Card -->
+  <div class="card">
+    <div class="title">Day</div>
+    <div class="temp">79°</div>
+    <div class="desc">
+      Showers and thundershowers likely.<br />High 79F. Winds WSW at 5–10 mph.
+      Chance of rain 80%.
+    </div>
+    <div class="extra">
+      <div>
+        <img src="icons/humidity.png" alt="Humidity" />Humidity<br />88%
+      </div>
+      <div><img src="icons/uv.png" alt="UV Index" />UV Index<br />10 of 11</div>
+      <div>
+        <img src="icons/sunrise.png" alt="Sunrise" />Sunrise<br />6:23 am
+      </div>
+      <div><img src="icons/sunset.png" alt="Sunset" />Sunset<br />6:32 pm</div>
+    </div>
+  </div>
 
-    <script>
-      // Initialize map
-      var map = L.map('map').setView([4.82, 7.01], 6);
-
-      // Add OpenStreetMap base
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-      }).addTo(map);
-
-      // Add RainViewer weather radar
-      var radarLayer = L.tileLayer(
-        'https://tilecache.rainviewer.com/v2/radar/{z}/{x}/{y}/2/1_1.png',
-        {
-          attribution: 'RainViewer.com',
-          opacity: 0.6
-        }
-      ).addTo(map);
-
-      // Refresh radar every 5 minutes
-      setInterval(() => {
-        radarLayer.setUrl(
-          'https://tilecache.rainviewer.com/v2/radar/{z}/{x}/{y}/2/1_1.png?time=' +
-            new Date().getTime()
-        );
-      }, 300000);
-
-      // Show current user location
-      map.locate({ setView: true, maxZoom: 10 });
-
-      map.on('locationfound', function (e) {
-        L.marker(e.latlng).addTo(map).bindPopup('You are here').openPopup();
-      });
-
-      map.on('locationerror', function () {
-        alert('Location access denied.');
-      });
-    </script>
-  </body>
-</html>
+  <!-- Night Card -->
+  <div class="card">
+    <div class="title">Night</div>
+    <div class="temp">67°</div>
+    <div class="desc">
+      Overcast with rain showers at times.<br />Low 67F. Winds light and
+      variable. Chance of rain 50%.
+    </div>
+    <div class="extra">
+      <div>
+        <img src="icons/humidity.png" alt="Humidity" />Humidity<br />100%
+      </div>
+      <div><img src="icons/uv.png" alt="UV Index" />UV Index<br />0 of 11</div>
+      <div>
+        <img src="icons/moonrise.png" alt="Moonrise" />Moonrise<br />11:41 pm
+      </div>
+      <div>
+        <img src="icons/moonset.png" alt="Moonset" />Moonset<br />11:30 am
+      </div>
+      <div><img src="icons/moon.png" alt="Moon Phase" />Waning Gibbous</div>
+    </div>
+  </div>
+</div>

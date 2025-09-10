@@ -1,1731 +1,1646 @@
-<!-- weather card -->
-<div class="weather-card">
-  <div class="weather-header">
-    <p>Port Harcourt, Rivers, Nigeria</p>
-    <p>As of 3:28 am WAT</p>
-  </div>
-  <!-- main weather condition -->
-  <div class="weather-main">
-    <div>
-      <div class="temp">
-        71°
-        <img src="https://openweathermap.org/img/wn/03d@2x.png" alt="Cloudy" />
-      </div>
-      <div class="condition">Mostly Cloudy</div>
-      <div class="details">Day 77° • Night 68°</div>
-    </div>
-  </div>
-  <div class="watch-btn">
-    <span>▶</span>
-    Watch: Mesmerizing Monsoon Storm At Sunset
-  </div>
-</div>
-
-<!-- whats happening -->
-<div class="weather-card_Current">
-  <div class="weather-header_Current">
-    <h2>Weather Today in Port Harcourt, Rivers, Nigeria</h2>
-    <h1>71°</h1>
-    <!-- <p>Feels Like</p> -->
-  </div>
-
-  <div class="flex">
-    <div class="item">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png"
-        alt="temperature"
-      />
-      <span>High/Low: 77° / 68°</span>
-    </div>
-    <div class="item">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/4005/4005901.png"
-        alt="humidity"
-      />
-      <span>Humidity: 98%</span>
-    </div>
-    <div class="item">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/869/869869.png"
-        alt="pressure"
-      />
-      <span>Pressure: 29.92 in</span>
-    </div>
-    <div class="item">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/869/869869.png"
-        alt="visibility"
-      />
-      <span>Visibility: 6 mi</span>
-    </div>
-    <div class="item">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/553/553416.png"
-        alt="wind"
-      />
-      <span>Wind: 7 mph</span>
-    </div>
-    <div class="item">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/481/481472.png"
-        alt="dew point"
-      />
-      <span>Dew Point: 70°</span>
-    </div>
-    <div class="item">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/869/869869.png"
-        alt="uv index"
-      />
-      <span>UV Index: 0 of 11</span>
-    </div>
-    <div class="item">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-        alt="moon phase"
-      />
-      <span>Moon Phase: Full Moon</span>
+<div class="weather-chart-container">
+  <div class="Hourly_weather">
+    <p><span>Hourly Weather </span>-Obia, Rivers, Nigeria</p>
+    <p>As of 5:38 am WAT</p>
+    <p><span>Thunderstorms possible after 11 AM.</span></p>
+    <div class="weather_chart">
+      <canvas id="weatherChart"></canvas>
     </div>
   </div>
 </div>
 
-<section class="map-section">
-  <h2>Weather Radar</h2>
-  <div id="map"></div>
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-</section>
-<!-- Hourly weather chat days -->
-
-<section
-  class="weather-hourly-time px-6 sm:px-12 py-12 bg-black max-w-screen-xl mx-auto"
->
-  <div class="weather-time_container">
-    <h1 class="weather_header-time">Monday, september 8</h1>
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+<main style="margin-top: 300px">
+  <section
+    class="weather-hourly-time px-6 sm:px-12 py-12 bg-black max-w-screen-xl mx-auto"
+  >
+    <div class="weather-time_container">
+      <h1 class="weather_header-time">Monday, september 8</h1>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
               fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
+            </div>
+          </div>
         </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
+      </div>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
+        </div>
+      </div>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
           </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
             </div>
-          </div>
 
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
             </div>
-          </div>
 
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+  </section>
+  <section
+    class="weather-hourly-time px-6 sm:px-12 py-12 bg-black max-w-screen-xl mx-auto"
+  >
+    <div class="weather-time_container">
+      <h1 class="weather_header-time">Tuesday, september 9</h1>
+
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
               fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
+            </div>
+          </div>
         </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
+      </div>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
 
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
+        </div>
+      </div>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
           </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
 
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+  </section>
+  <section
+    class="weather-hourly-time px-6 sm:px-12 py-12 bg-black max-w-screen-xl mx-auto"
+  >
+    <div class="weather-time_container">
+      <h1 class="weather_header-time">wednesday, september 10</h1>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
               fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
+            </div>
+          </div>
         </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
+      </div>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
 
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
 
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
+        </div>
+      </div>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
           </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
 
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+  </section>
+  <section
+    class="weather-hourly-time px-6 sm:px-12 py-12 bg-black max-w-screen-xl mx-auto"
+  >
+    <div class="weather-time_container">
+      <h1 class="weather_header-time">Thursday, September 11</h1>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
               fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
+            </div>
+          </div>
         </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
+      </div>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
+          </div>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
+            </div>
 
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
+        </div>
+      </div>
+      <div class="weather-line-item">
+        <button class="weather-card-pieses" onclick="toggleAnswer(this)">
+          <span>9pm</span>
+          <span>70°</span>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
+            alt="moon phase"
+          />
+          <div class="weather-time-percentage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              width="20"
+              height="20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>30%</span>
           </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="weather-card-togle_answer">
+          <h3>Few Showers</h3>
+          <div class="weather-grid">
+            <div class="weather-item_list-items">
+              <i class="fas fa-temperature-high"></i>
+              <div>
+                <p>Feels Like</p>
+                <strong>70°</strong>
+              </div>
             </div>
-          </div>
 
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
+            <div class="weather-item_list-items">
+              <i class="fas fa-wind"></i>
+              <div>
+                <p>Wind</p>
+                <strong>WSW 4 mph</strong>
+              </div>
             </div>
-          </div>
 
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
+            <div class="weather-item_list-items">
+              <i class="fas fa-tint"></i>
+              <div>
+                <p>Humidity</p>
+                <strong>99%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-sun"></i>
+              <div>
+                <p>UV Index</p>
+                <strong>0 of 11</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud"></i>
+              <div>
+                <p>Cloud Cover</p>
+                <strong>94%</strong>
+              </div>
+            </div>
+
+            <div class="weather-item_list-items">
+              <i class="fas fa-cloud-rain"></i>
+              <div>
+                <p>Rain Amount</p>
+                <strong>0 in</strong>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<section
-  class="weather-hourly-time px-6 sm:px-12 py-12 bg-black max-w-screen-xl mx-auto"
->
-  <div class="weather-time_container">
-    <h1 class="weather_header-time">Tuesday, september 9</h1>
-
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section
-  class="weather-hourly-time px-6 sm:px-12 py-12 bg-black max-w-screen-xl mx-auto"
->
-  <div class="weather-time_container">
-    <h1 class="weather_header-time">wednesday, september 10</h1>
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section
-  class="weather-hourly-time px-6 sm:px-12 py-12 bg-black max-w-screen-xl mx-auto"
->
-  <div class="weather-time_container">
-    <h1 class="weather_header-time">Thursday, September 11</h1>
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="weather-line-item">
-      <button class="weather-card-pieses" onclick="toggleAnswer(this)">
-        <span>9pm</span>
-        <span>70°</span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4150/4150897.png"
-          alt="moon phase"
-        />
-        <div class="weather-time-percentage">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M6.025 16.35A5.633 5.633 0 0 0 10 18a5.633 5.633 0 0 0 5.625-5.625 6.29 6.29 0 0 0-.952-3.13L10.53 2.649a.65.65 0 0 0-1.06 0L5.31 9.278c-.578.932-.9 2-.934 3.097a5.632 5.632 0 0 0 1.65 3.976Zm.361-6.44L10 4.155l3.595 5.723c.475.75.744 1.61.78 2.497a4.375 4.375 0 1 1-8.75 0 4.986 4.986 0 0 1 .761-2.465ZM10 14.25v1.25a3.29 3.29 0 0 0 3.125-3.125h-1.25A2.06 2.06 0 0 1 10 14.25Z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>30%</span>
-        </div>
-        <i class="fas fa-plus"></i>
-      </button>
-      <div class="weather-card-togle_answer">
-        <h3>Few Showers</h3>
-        <div class="weather-grid">
-          <div class="weather-item_list-items">
-            <i class="fas fa-temperature-high"></i>
-            <div>
-              <p>Feels Like</p>
-              <strong>70°</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-wind"></i>
-            <div>
-              <p>Wind</p>
-              <strong>WSW 4 mph</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-tint"></i>
-            <div>
-              <p>Humidity</p>
-              <strong>99%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-sun"></i>
-            <div>
-              <p>UV Index</p>
-              <strong>0 of 11</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud"></i>
-            <div>
-              <p>Cloud Cover</p>
-              <strong>94%</strong>
-            </div>
-          </div>
-
-          <div class="weather-item_list-items">
-            <i class="fas fa-cloud-rain"></i>
-            <div>
-              <p>Rain Amount</p>
-              <strong>0 in</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
+</main>

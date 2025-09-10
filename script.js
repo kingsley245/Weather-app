@@ -63,7 +63,7 @@ function loadPageContent(pageKey) {
 
   fetch(file)
     .then((res) => {
-      if (res.status != '200') throw new Error(`HTTP ${res.status}`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return res.text();
     })
     .then((html) => {
@@ -84,12 +84,29 @@ function loadPageContent(pageKey) {
 
 links.forEach((li) => {
   li.addEventListener('click', function (e) {
-    e.preventDefault();
-
     const a = li.querySelector('a');
     if (!a) return;
     const page = a.getAttribute('href').substring(1);
     loadPageContent.hash = page;
+  });
+});
+
+function setATactiveLink() {
+  const currentPage = location.hash.replace('#', '') || 'today';
+  console.log(currentPage);
+
+  links.forEach((link) => {
+    if (link.getAttribute('href') === `#${currentPage}`) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
+links.forEach((link) => {
+  link.addEventListener('click', function () {
+    setATactiveLink();
   });
 });
 
@@ -109,3 +126,38 @@ function loadScript(filepath) {
   script.defer = true;
   document.body.appendChild(script);
 }
+
+// Listen for hashchange to ensure the active link is updated when the URL changes
+window.addEventListener('hashchange', () => {
+  setATactiveLink();
+});
+
+// Ensure the active link is correctly set when the page loads (or reloads)
+window.addEventListener('DOMContentLoaded', () => {
+  setATactiveLink(); // Set active link on initial load
+});
+
+document.querySelectorAll('.menu-list a').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    // Remove the 'active' class from all links
+    document.querySelectorAll('.menu-list a').forEach((link) => {
+      link.classList.remove('active');
+    });
+
+    // Add the 'active' class to the clicked link
+    event.target.classList.add('active');
+    localStorage.setItem('activeLink', event.target.getAttribute('href'));
+  });
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash.substring(1); // Remove the '#' character
+
+  if (hash) {
+    const link = document.querySelector(`.menu-list a[href="#${hash}"]`);
+
+    if (link) {
+      link.classList.add('active');
+    }
+  }
+});
