@@ -1,282 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Monthly Weather Calendar</title>
-
-    <!-- Font Awesome 7.0 -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer Example</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-
     <style>
-      :root {
-        --bg: #f4f6f8;
-        --card: #ffffff;
-        --muted: #6b7280;
-        --accent: #2563eb;
-        --shadow: 0 6px 18px rgba(20, 20, 20, 0.06);
-      }
       body {
         margin: 0;
-        padding: 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        background: var(--bg);
-        color: #111827;
-      }
-      .container {
-        width: 100%;
-        max-width: 1100px;
-        margin: 0 auto;
+        font-family: Arial, sans-serif;
       }
 
-      /* Top bar */
-      .top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 10px;
+      footer {
+        text-align: center;
+        padding: 30px 20px;
+        background: #fff;
+        border-top: 1px solid #ddd;
+        font-size: 14px;
+        color: #333;
       }
-      .controls {
-        display: flex;
-        gap: 8px;
-        align-items: center;
+
+      /* Social Icons */
+      .social {
+        margin-bottom: 20px;
       }
-      select {
-        padding: 6px 8px;
-        border-radius: 6px;
-        border: 1px solid #ccc;
+
+      .social span {
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      .social a {
+        display: inline-block;
+        margin: 0 6px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        background: #f1f1f1;
+        color: #000;
+        font-size: 18px;
+        text-align: center;
+        transition: 0.3s;
+      }
+
+      .social a:hover {
+        background: #ddd;
+      }
+
+      /* Links Row */
+      .footer-links {
+        margin: 15px 0;
+      }
+
+      .footer-links a {
+        margin: 0 8px;
+        text-decoration: none;
+        color: #333;
         font-size: 14px;
       }
-      .btn {
-        background: var(--card);
-        border: 0;
-        padding: 6px 10px;
-        border-radius: 6px;
-        box-shadow: var(--shadow);
-        cursor: pointer;
+
+      .footer-links a:hover {
+        text-decoration: underline;
       }
 
-      /* Calendar */
-      .calendar-wrap {
-        margin-top: 20px;
-        overflow-x: auto;
+      /* Policy Links */
+      .footer-policies {
+        margin: 10px 0;
+        font-weight: bold;
       }
-      table.calendar {
-        width: 100%;
-        border-collapse: collapse;
+
+      .footer-policies a {
+        margin: 0 5px;
+        text-decoration: none;
+        color: #333;
       }
-      table.calendar th,
-      table.calendar td {
-        border: 1px solid #e5e7eb;
-        text-align: center;
-        vertical-align: top;
-        padding: 6px;
-        background: var(--card);
-        min-width: 110px;
+
+      .footer-policies a:hover {
+        text-decoration: underline;
       }
-      table.calendar th {
-        background: #f0f2f5;
-        font-weight: 600;
+
+      /* Logos */
+      .footer-logos {
+        margin: 20px 0;
       }
-      .day-cell {
-        cursor: pointer;
-        transition: background 0.15s;
-        position: relative;
+
+      .footer-logos img {
+        margin: 0 5px;
+        height: 35px;
+        vertical-align: middle;
       }
-      .day-cell:hover {
-        background: #f9fafb;
-      }
-      .date {
+
+      /* Text */
+      .footer-text {
+        max-width: 800px;
+        margin: 15px auto;
         font-size: 13px;
-        color: var(--muted);
-        display: inline-block;
-        padding: 4px 8px;
-        border-radius: 50%;
+        color: #555;
+        line-height: 1.6;
       }
-      .today .date {
-        background: var(--accent);
-        color: #fff;
-        font-weight: 700;
+
+      .footer-text a {
+        color: #1a73e8;
+        text-decoration: none;
       }
-      .icon {
-        font-size: 18px;
-        color: var(--accent);
-        margin: 4px 0;
+
+      .footer-text a:hover {
+        text-decoration: underline;
       }
-      .temps {
-        font-size: 12px;
-      }
-      .high {
-        font-weight: 700;
-      }
-      .low {
-        color: var(--muted);
+
+      /* Bottom Note */
+      .footer-bottom {
+        margin-top: 20px;
+        font-size: 13px;
+        color: #666;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="top">
-        <div class="controls">
-          <select id="monthSelect" aria-label="Monthly select icon"></select>
-          <select id="yearSelect" aria-label="Monthly select icon"></select>
-        </div>
-        <div class="controls">
-          <button class="btn" onclick="prevMonth()" aria-label="button click">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button class="btn" onclick="nextMonth()" aria-label="button click">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-        </div>
+    <footer>
+      <!-- Social -->
+      <div class="social">
+        <span>Connect With Us</span>
+        <a href="#"
+          ><i
+            class="fab fa-facebook-f"
+            aria-label="link for social-medial.All"
+          ></i
+        ></a>
+        <a href="#"
+          ><i
+            class="fab fa-x-twitter"
+            aria-label="link for social-medial.All"
+          ></i
+        ></a>
+        <a href="#"
+          ><i
+            class="fab fa-instagram"
+            aria-label="link for social-medial.All"
+          ></i
+        ></a>
+        <a href="#"
+          ><i class="fab fa-youtube" aria-label="link for social-medial.All"></i
+        ></a>
       </div>
 
-      <div class="calendar-wrap">
-        <table class="calendar">
-          <thead>
-            <tr>
-              <th>Sun</th>
-              <th>Mon</th>
-              <th>Tue</th>
-              <th>Wed</th>
-              <th>Thu</th>
-              <th>Fri</th>
-              <th>Sat</th>
-            </tr>
-          </thead>
-          <tbody id="calendarBody"></tbody>
-        </table>
+      <!-- Top Links -->
+      <div class="footer-links">
+        <a href="#">Feedback</a>
+        <a href="#">Mission</a>
+        <a href="#">Careers</a>
+        <a href="#">News Room</a>
+        <a href="#">Advertise With Us</a>
+        <a href="#">TV</a>
+        <a href="#">Weather Data APIs</a>
       </div>
-    </div>
 
-    <script>
-      const monthSelect = document.getElementById('monthSelect');
-      const yearSelect = document.getElementById('yearSelect');
-      const tbody = document.getElementById('calendarBody');
+      <!-- Policy Links -->
+      <div class="footer-policies">
+        <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> |
+        <a href="#">AdChoices</a> | <a href="#">Accessibility Statement</a> |
+        <a href="#">Data Vendors</a>
+      </div>
 
-      const months = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December'
-      ];
+      <!-- Logos -->
+      <div class="footer-logos">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/The_Weather_Company_logo.svg/512px-The_Weather_Company_logo.svg.png"
+          alt="The Weather Company"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/6/65/Weather_Channel_logo_2005.png"
+          alt="Weather Channel"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Weather_Underground_Logo_2016.svg/512px-Weather_Underground_Logo_2016.svg.png"
+          alt="Weather Underground"
+        />
+        <img
+          src="https://icons.iconarchive.com/icons/dtafalonso/android-l/512/Maps-icon.png"
+          alt="Maps"
+        />
+      </div>
 
-      // weather icons
-      const icons = [
-        { cls: 'fa-solid fa-sun', name: 'Sunny' },
-        { cls: 'fa-solid fa-cloud-sun', name: 'Partly Cloudy' },
-        { cls: 'fa-solid fa-cloud-showers-heavy', name: 'Rain' },
-        { cls: 'fa-solid fa-cloud-bolt', name: 'Thunderstorm' },
-        { cls: 'fa-solid fa-cloud', name: 'Cloudy' }
-      ];
-      function randInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
+      <!-- Text -->
+      <div class="footer-text">
+        We recognize our responsibility to use data and technology for good. We
+        may use or share your data with our data vendors. Take control of your
+        data.
+        <br /><br />
+        <strong>Data Rights</strong><br />
+        The Weather Channel is the world's most accurate forecaster according to
+        ForecastWatch,
+        <a href="#">Global and Regional Weather Forecast Accuracy Overview</a>,
+        2021-2024, commissioned by The Weather Company.
+      </div>
 
-      // populate selectors
-      months.forEach((m, i) => {
-        const opt = document.createElement('option');
-        opt.value = i;
-        opt.text = m;
-        monthSelect.appendChild(opt);
-      });
-      for (let y = 2020; y <= 2035; y++) {
-        const opt = document.createElement('option');
-        opt.value = y;
-        opt.text = y;
-        yearSelect.appendChild(opt);
-      }
-
-      let today = new Date();
-      let currentMonth = today.getMonth();
-      let currentYear = today.getFullYear();
-
-      monthSelect.value = currentMonth;
-      yearSelect.value = currentYear;
-
-      function renderCalendar(month, year) {
-        tbody.innerHTML = '';
-        let firstDay = new Date(year, month).getDay();
-        let daysInMonth = new Date(year, month + 1, 0).getDate();
-
-        let date = 1;
-        for (let i = 0; i < 6; i++) {
-          // 6 weeks
-          const row = document.createElement('tr');
-          for (let j = 0; j < 7; j++) {
-            const cell = document.createElement('td');
-            if ((i === 0 && j < firstDay) || date > daysInMonth) {
-              cell.innerHTML = '';
-            } else {
-              const icon = icons[randInt(0, icons.length - 1)];
-              const hi = randInt(75, 88),
-                lo = randInt(60, 74);
-              cell.classList.add('day-cell');
-              cell.innerHTML = `
-            <div class="date">${date}</div>
-            <div class="icon"><i class="${icon.cls}"></i></div>
-            <div class="temps"><span class="high">${hi}°</span> / <span class="low">${lo}°</span></div>
-          `;
-              if (
-                date === today.getDate() &&
-                year === today.getFullYear() &&
-                month === today.getMonth()
-              ) {
-                cell.classList.add('today');
-              }
-              date++;
-            }
-            row.appendChild(cell);
-          }
-          tbody.appendChild(row);
-        }
-      }
-
-      function prevMonth() {
-        if (currentMonth === 0) {
-          currentMonth = 11;
-          currentYear--;
-        } else {
-          currentMonth--;
-        }
-        monthSelect.value = currentMonth;
-        yearSelect.value = currentYear;
-        renderCalendar(currentMonth, currentYear);
-      }
-      function nextMonth() {
-        if (currentMonth === 11) {
-          currentMonth = 0;
-          currentYear++;
-        } else {
-          currentMonth++;
-        }
-        monthSelect.value = currentMonth;
-        yearSelect.value = currentYear;
-        renderCalendar(currentMonth, currentYear);
-      }
-
-      monthSelect.onchange = () => {
-        currentMonth = parseInt(monthSelect.value);
-        renderCalendar(currentMonth, currentYear);
-      };
-      yearSelect.onchange = () => {
-        currentYear = parseInt(yearSelect.value);
-        renderCalendar(currentMonth, currentYear);
-      };
-
-      renderCalendar(currentMonth, currentYear);
-    </script>
+      <!-- Bottom -->
+      <div class="footer-bottom">
+        Weather Channel <br />
+        © The Weather Company, LLC 2025
+      </div>
+    </footer>
   </body>
 </html>

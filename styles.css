@@ -903,3 +903,108 @@ table.calendar th {
 .low {
   color: var(--muted);
 }
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Social Icons */
+.social {
+  margin-bottom: 20px;
+}
+
+.social span {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.social a {
+  display: inline-block;
+  margin: 0 6px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  color: #000;
+  font-size: 18px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.social a:hover {
+  background: #ddd;
+}
+
+/* Links Row */
+.footer-links {
+  margin: 15px 0;
+}
+
+.footer-links a {
+  margin: 0 8px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Policy Links */
+.footer-policies {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.footer-policies a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-policies a:hover {
+  text-decoration: underline;
+}
+
+/* Logos */
+.footer-logos {
+  margin: 20px 0;
+}
+
+.footer-logos img {
+  margin: 0 5px;
+  height: 35px;
+  vertical-align: middle;
+}
+
+/* Text */
+.footer-text {
+  max-width: 800px;
+  margin: 15px auto;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.footer-text a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* Bottom Note */
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #666;
+}
