@@ -79,7 +79,7 @@ function loadPageContent(pageKey) {
       console.error(err);
       document.getElementById(
         'main__Content-page-load'
-      ).innerHTML = `<h1 style="color:red";}>Failed to loadPageContent$(file) please contact developer 07041679031(whatsapp)</h1>`;
+      ).innerHTML = `<h1 style="color:red";}>Failed to loadPageContent${file} please contact developer 07041679031(whatsapp)</h1>`;
     });
 }
 
@@ -128,7 +128,6 @@ function loadScript(filepath) {
   document.body.appendChild(script);
 }
 
-// Listen for hashchange to ensure the active link is updated when the URL changes
 window.addEventListener('hashchange', () => {
   setATactiveLink();
 });
@@ -162,3 +161,26 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+navigator.geolocation.getCurrentPosition(
+  function (position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    getWeather(latitude, longitude);
+  },
+  function (error) {
+    console.log('Error getting location:', error);
+  }
+);
+function getWeather(latitude, longitude) {
+  const apiKey = '293ac5c29bda4e809cc43454251209';
+  const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log('Weather Data:', data);
+    })
+    .catch((error) => console.log('Error fetching weather data:', error));
+}

@@ -832,7 +832,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
-select {
+.select {
   padding: 6px 8px;
   border-radius: 6px;
   border: 1px solid #ccc;

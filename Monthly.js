@@ -36,6 +36,7 @@ months.forEach((m, i) => {
   opt.text = m;
   monthSelect.appendChild(opt);
 });
+
 for (let y = 2020; y <= 2035; y++) {
   const opt = document.createElement('option');
   opt.value = y;
