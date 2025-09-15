@@ -89,52 +89,31 @@ function updatechat(latitude, longitude, hoursTo = 8) {
 
       weatherChart.update();
       const location = data_response.location;
+
       const weather = data_response.current;
 
-      const formatLocalTime = (localtime) => {
-        const date = new Date(localtime); // Parse the local time string
-        const options = { hour: '2-digit', minute: '2-digit', hour12: true }; // Format time
+      const weatherLocation = document.querySelector(
+        '.Hourly_weather p:nth-of-type(1)'
+      );
+      const weatherTime = document.querySelector(
+        '.Hourly_weather p:nth-of-type(2)'
+      );
+      const weatherForecast = document.querySelector(
+        '.Hourly_weather p:nth-of-type(3)'
+      );
+
+      weatherLocation.innerHTML = `<span>Hourly Weather </span>- ${location.name}, ${location.region}, ${location.country}`;
+      weatherTime.innerHTML = `As of ${formatLocalTime(
+        location.localtime
+      )} WAT`;
+      weatherForecast.innerHTML = `<span>${weather.condition.text} after 11 AM.</span>`;
+
+      // Function to format the local time (if needed)
+      function formatLocalTime(localtime) {
+        const date = new Date(localtime);
+        const options = { hour: '2-digit', minute: '2-digit', hour12: true };
         return date.toLocaleString('en-US', options); // Format and return time
-      };
-
-      // Create the hourly weather message (Thunderstorms after 11 AM)
-      const weatherMessage = weather.hourly.some((hour) => {
-        const hourDate = new Date(hour.dt * 1000);
-        return (
-          hourDate.getHours() >= 11 &&
-          hour.weather[0].description.includes('thunderstorm')
-        );
-      })
-        ? `Thunderstorms possible after 11 AM.`
-        : 'No thunderstorms expected today.';
-
-      // Render the Weather Info
-      const weatherChat = document.querySelector('.weather-chart-container');
-      console.log(weatherChat);
-      weatherChat.innerHTML = ''; // Clear previous content
-
-      // Create the Hourly Weather Element
-      const childEL = document.createElement('div');
-      childEL.classList.add('Hourly-weather');
-      childEL.innerHTML = `
-  <p><span>Hourly Weather </span> - ${location.name}, ${location.region}, ${
-        location.country
-      }</p>
-  <p>As of ${formatLocalTime(location.localtime)} WAT</p>
-  <p><span>${weatherMessage}</span></p>
-`;
-
-      // Append the Hourly Weather Element to the container
-      weatherChat.appendChild(childEL);
-
-      // Create the Weather Chart Element
-      const weather_chart = document.createElement('div');
-      weather_chart.classList.add('weather_chart');
-      weather_chart.innerHTML = `<canvas id="weatherChart"></canvas>`;
-
-      // Append the Weather Chart to the container
-      weather_chart.appendChild(childEL);
-      console.log(weatherChat);
+      }
     })
     .catch((error) => console.error(`${error}`));
 }
