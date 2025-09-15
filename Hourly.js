@@ -130,6 +130,7 @@ function getWeather_cards_Hourly(latitude, longitude, HoursTodisplay = 9) {
 
       // Loop through the forecast days
       const forecastday = data.forecast.forecastday;
+      // console.log(forecastday);
       forecastday.forEach((day) => {
         // Getting the formatted date for the header
         const forecastDate = new Date(day.date);

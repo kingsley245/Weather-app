@@ -47,7 +47,8 @@ const links = [...document.querySelectorAll('.menu-list')];
 const scriptMap = {
   today: 'today.js',
   Hourly: 'Hourly.js',
-  Monthly: 'Monthly.js'
+  Monthly: 'Monthly.js',
+  Day10: 'Day10.js'
 };
 function loadPageContent(pageKey) {
   const file = `${pageKey}.html`;
