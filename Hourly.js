@@ -14,7 +14,7 @@ navigator.geolocation.getCurrentPosition(
   }
 );
 
-function updatechat(latitude, longitude, hoursTo) {
+function updatechat(latitude, longitude, hoursTo = 10) {
   const api = '293ac5c29bda4e809cc43454251209';
   const url = `https://api.weatherapi.com/v1/forecast.json?key=${api}&q=${latitude},${longitude}`;
 
@@ -65,15 +65,15 @@ function updatechat(latitude, longitude, hoursTo) {
 
   fetch(url)
     .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      const forecastHours = data.forecast.forecastday[0].hour;
-      console.log(forecastHours);
+    .then((data_response) => {
+      console.log(data_response);
+      const forecastHours = data_response.forecast.forecastday[0].hour;
+
       const labels = [];
       const temperatureData = [];
       const rainData = [];
 
-      forecastHours.forEach((hour) => {
+      forecastHours.slice(0, hoursTo).forEach((hour) => {
         labels.push(
           new Date(hour.time).toLocaleTimeString([], {
             hour: '2-digit',
@@ -84,10 +84,11 @@ function updatechat(latitude, longitude, hoursTo) {
         rainData.push(hour.chance_of_rain);
       });
       weatherChart.data.labels = labels;
-      weatherChart.data.datasets[0].data = temperatureData;
-      weatherChart.data.datasets[1].data = rainData;
+      console.log(weatherChart.data.datasets[0]);
+
+      weatherChart.data.datasets[1];
 
       weatherChart.update();
     })
-    .catch((error) => console.error(`this is the ${error}`));
+    .catch((error) => console.error(`${error}`));
 }
