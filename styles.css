@@ -386,7 +386,7 @@ body {
 .weather-card {
   width: 100%;
   max-width: 1100px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(13, 13, 13, 0.5)),
     url('https://images.unsplash.com/photo-1501973801540-537f08ccae7b')
       no-repeat center/cover;
   border-radius: 10px;
@@ -1027,4 +1027,9 @@ footer {
   margin-top: 20px;
   font-size: 13px;
   color: #666;
+}
+
+.weather-card-pieses:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
 }
