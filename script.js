@@ -2,6 +2,7 @@ function toggleAnswer(card) {
   const answer = card.nextElementSibling;
   const allAnswers = document.querySelectorAll('.weather-card-togle_answer');
   const allIcons = document.querySelectorAll('.weather-card-pieses i');
+  console.log(allIcons);
 
   allAnswers.forEach((el, index) => {
     if (el !== answer) {
@@ -94,7 +95,6 @@ links.forEach((li) => {
 
 function setATactiveLink() {
   const currentPage = location.hash.replace('#', '') || 'today';
-  console.log(currentPage);
 
   links.forEach((link) => {
     if (link.getAttribute('href') === `#${currentPage}`) {
@@ -180,7 +180,7 @@ function getWeather(latitude, longitude) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      console.log('Weather Data:', data);
+      // console.log('Weather Data:', data);
     })
     .catch((error) => console.log('Error fetching weather data:', error));
 }
