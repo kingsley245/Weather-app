@@ -578,7 +578,11 @@ body {
 
 .weather-time_container {
   margin: 0 auto;
+  margin-bottom: 90px;
   /* width: 200px; */
+}
+.weather_time_container-innerH {
+  margin-bottom: 40px;
 }
 
 .weather-card-pieses {
@@ -603,6 +607,7 @@ body {
 
 .weather_header-time {
   margin-bottom: 20px;
+  /* font-size: 2px; */
 }
 
 .weather-time-percentage {
