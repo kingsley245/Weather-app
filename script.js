@@ -2,7 +2,6 @@ function toggleAnswer(card) {
   const answer = card.nextElementSibling;
   const allAnswers = document.querySelectorAll('.weather-card-togle_answer');
   const allIcons = document.querySelectorAll('.weather-card-pieses i');
-  console.log(allIcons);
 
   allAnswers.forEach((el, index) => {
     if (el !== answer) {
@@ -48,7 +47,7 @@ const links = [...document.querySelectorAll('.menu-list')];
 const scriptMap = {
   today: 'today.js',
   Hourly: 'Hourly.js',
-  Monthly: 'monthly.js'
+  Monthly: 'Monthly.js'
 };
 function loadPageContent(pageKey) {
   const file = `${pageKey}.html`;

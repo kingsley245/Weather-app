@@ -5,7 +5,7 @@ navigator.geolocation.getCurrentPosition(
 
     getWeather(latitude, longitude);
     getWeather_cards(latitude, longitude);
-    loadScript(latitude, longitude);
+    // loadScript(latitude, longitude);
   },
   function (error) {
     console.log('Error getting location:', error);
@@ -174,9 +174,9 @@ navigator.geolocation.getCurrentPosition(function (position) {
   getWeather(lat, lon);
 });
 
-function getWeather_cards(latitude, longitude, HoursTodisplay = 6) {
+function getWeather_cards(latitude, longitude, HoursTodisplay = 9) {
   const apiKey = '293ac5c29bda4e809cc43454251209';
-  const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${latitude},${longitude}&days=8`;
+  const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${latitude},${longitude}&days=10`;
 
   fetch(url)
     .then((response) => response.json())
@@ -303,7 +303,6 @@ function getWeather_cards(latitude, longitude, HoursTodisplay = 6) {
           `;
 
           weatherCard_inner.appendChild(weatherDetails);
-          console.log(weatherCard_inner);
         });
       });
     })
