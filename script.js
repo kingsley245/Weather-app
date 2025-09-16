@@ -167,13 +167,13 @@ navigator.geolocation.getCurrentPosition(
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
 
-    getWeather(latitude, longitude);
+    getWeather_good(latitude, longitude);
   },
   function (error) {
     console.log('Error getting location:', error);
   }
 );
-function getWeather(latitude, longitude) {
+function getWeather_good(latitude, longitude) {
   const apiKey = '293ac5c29bda4e809cc43454251209';
   const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`;
 
@@ -181,6 +181,14 @@ function getWeather(latitude, longitude) {
     .then((response) => response.json())
     .then((data) => {
       // console.log('Weather Data:', data);
+      const weather = data.current;
+      const location = data.location;
+      const index_html = document.querySelector('.locattion');
+      index_html.innerHTML = `
+       <p>${location.name} ,  ${location.region},${location.country}</p>
+        <i class="fa fa-star"></i>
+      `;
+      console.log(index_html);
     })
     .catch((error) => console.log('Error fetching weather data:', error));
 }
